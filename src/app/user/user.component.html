@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>User</h1>
+  </div>
+  <form [formGroup]="formgroup" (ngSubmit)="submit(formgroup.value)">
+    <div class="col-lg-12 form-group">
+      <label>Name <span class="text-danger small"
+          *ngIf="formgroup.controls.name.touched && formgroup.controls.name.invalid ">please enter name</span></label>
+      <input type="text" class="form-control" formControlName="name" placeholder="Name" />
+    </div>
+    <div class="col-lg-12 form-group">
+      <label>Email <span class="text-danger small"
+        *ngIf="formgroup.controls.email.touched && formgroup.controls.email.invalid ">please enter valid email</span></label>
+      <input type="email" class="form-control" formControlName="email" placeholder="Email" />
+    </div>
+    <div class="col-lg-12 form-group">
+      <label>Mobile No <span class="text-danger small"
+        *ngIf="formgroup.controls.mobileno.touched && formgroup.controls.mobileno.invalid ">please enter valid mobile no</span></label>
+      <input type="text" class="form-control" formControlName="mobileno" placeholder="Mobile No" />
+    </div>
+    <div class="col-lg-12 form-group mt-2">
+      <button type="submit" [disabled]="formgroup.invalid || posting" class="btn btn-outline-primary">Save</button>
+    </div>
+  </form>
+</div>
+
+
+<!-- <div class="row">
+  <div class="col-lg-12">
+    <h1>User</h1>
+  </div>
+  <div class="col-lg-12 form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" [(ngModel)]="name" placeholder="Name" />
+  </div>
+  <div class="col-lg-12 form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" [(ngModel)]="email" placeholder="Email" />
+  </div>
+  <div class="col-lg-12 form-group">
+    <label>Mobile No</label>
+    <input type="text" class="form-control" [(ngModel)]="mobileno" placeholder="Mobile No" />
+  </div>
+  <div class="col-lg-12 form-group mt-2">
+      <button [disabled]="name == '' || email == '' || mobileno == '' || posting " (click)="submit()" class="btn btn-outline-primary">Save</button>
+  </div>
+</div> -->
